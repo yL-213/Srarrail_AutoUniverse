@@ -38,6 +38,15 @@ def config_view(page: Page):
     def fate_changed(e: ControlEvent):
         config.fate = e.data
 
+    def secfate1_changed(e):
+        config.secondary_fate[0] = e.data
+
+    def secfate2_changed(e):
+        config.secondary_fate[1] = e.data
+
+    def secfate3_changed(e):
+        config.secondary_fate[2] = e.data
+
     def timezone_changed(e: ControlEvent):
         config.timezone = e.data
 
@@ -202,6 +211,65 @@ def config_view(page: Page):
                                             value=config.fate,
                                             on_change=fate_changed,
                                         ),
+                                        ft.Dropdown(
+                                            width=100,
+                                            label="副命途1",
+                                            hint_text="若无命途祝福则优先选取",
+                                            options=[
+                                                ft.dropdown.Option("存护"),
+                                                ft.dropdown.Option("记忆"),
+                                                ft.dropdown.Option("虚无"),
+                                                ft.dropdown.Option("丰饶"),
+                                                ft.dropdown.Option("巡猎"),
+                                                ft.dropdown.Option("毁灭"),
+                                                ft.dropdown.Option("欢愉"),
+                                                ft.dropdown.Option("繁育"),
+                                                ft.dropdown.Option("智识"),
+                                            ],
+                                            text_style=TextStyle(color=ft.colors.PINK,weight=ft.FontWeight.W_600),
+                                            value=config.secondary_fate[0],
+                                            on_change=secfate1_changed,
+                                        ),
+                                        ft.Dropdown(
+                                            width=100,
+                                            label="副命途2",
+                                            hint_text="若无命途祝福则优先选取",
+                                            options=[
+                                                ft.dropdown.Option("存护"),
+                                                ft.dropdown.Option("记忆"),
+                                                ft.dropdown.Option("虚无"),
+                                                ft.dropdown.Option("丰饶"),
+                                                ft.dropdown.Option("巡猎"),
+                                                ft.dropdown.Option("毁灭"),
+                                                ft.dropdown.Option("欢愉"),
+                                                ft.dropdown.Option("繁育"),
+                                                ft.dropdown.Option("智识"),
+                                            ],
+                                            text_style=TextStyle(color=ft.colors.PINK,weight=ft.FontWeight.W_600),
+                                            value=config.secondary_fate[1],
+                                            on_change=secfate2_changed,
+                                        ),
+                                        ft.Dropdown(
+                                            width=100,
+                                            label="副命途3",
+                                            hint_text="若无命途祝福则优先选取",
+                                            options=[
+                                                ft.dropdown.Option("存护"),
+                                                ft.dropdown.Option("记忆"),
+                                                ft.dropdown.Option("虚无"),
+                                                ft.dropdown.Option("丰饶"),
+                                                ft.dropdown.Option("巡猎"),
+                                                ft.dropdown.Option("毁灭"),
+                                                ft.dropdown.Option("欢愉"),
+                                                ft.dropdown.Option("繁育"),
+                                                ft.dropdown.Option("智识"),
+                                            ],
+                                            text_style=TextStyle(color=ft.colors.PINK,weight=ft.FontWeight.W_600),
+                                            value=config.secondary_fate[2],
+                                            on_change=secfate3_changed,
+                                        ),
+                                        ft.Dropdown(
+                                            width=150,
                                         ft.Dropdown(
                                             width=150,
                                             label="时区",

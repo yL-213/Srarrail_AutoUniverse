@@ -15,6 +15,7 @@ class Config:
         self.allow_difficult = [1, 2, 3, 4, 5]
         self.text = "info.yml"
         self.fate = "巡猎"
+        self.secondary_fate = ['存护','记忆','毁灭']
         self.map_sha = ""
         self.fates = ["存护", "记忆", "虚无", "丰饶", "巡猎", "毁灭", "欢愉", "繁育", "智识"]
         self.show_map_mode = 0
@@ -61,6 +62,7 @@ class Config:
                     self.angle = str(config['angle'])
                     self.difficult = config['difficulty']
                     self.fate = config['fate']
+                    secondary_fate = config['secondary_fate']
                     self.map_sha = config['map_sha']
                     self.show_map_mode = config['show_map_mode']
                     self.debug_mode = config['debug_mode']
@@ -149,7 +151,7 @@ class Config:
                     "angle": float(self.angle),
                     "difficulty": self.diffi,
                     "fate": self.fate,
-                    "secondary_fate": secondary_fate,
+                    "secondary_fate": self.secondary_fate,
                     "map_sha": self.map_sha,
                     "show_map_mode": self.show_map_mode,
                     "debug_mode": self.debug_mode,
