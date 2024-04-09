@@ -270,8 +270,6 @@ def config_view(page: Page):
                                         ),
                                         ft.Dropdown(
                                             width=150,
-                                        ft.Dropdown(
-                                            width=150,
                                             label="时区",
                                             hint_text="影响计数刷新时间",
                                             options=[
