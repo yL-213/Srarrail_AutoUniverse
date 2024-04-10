@@ -24,7 +24,7 @@ def show_snack_bar(page, text, color, selectable=False):
     return page.show_snack_bar(
         ft.SnackBar(
             open=True,
-            content=ft.Text(text, selectable=selectable),
+            content=ft.Text(text, selectable=selectable, text_align="CENTER"),
             bgcolor=color,
         )
     )

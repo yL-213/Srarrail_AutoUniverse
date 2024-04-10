@@ -37,6 +37,35 @@ def config_view(page: Page):
 
     def fate_changed(e: ControlEvent):
         config.fate = e.data
+        
+        if config.fate == "存护":
+            config.secondary_fate[0] = "记忆"
+            config.secondary_fate[1] = "毁灭"
+            config.secondary_fate[2] = "欢愉"
+        elif config.fate == "记忆":
+            pass
+        elif config.fate == "虚无":
+            config.secondary_fate[0] = "巡猎"
+            config.secondary_fate[1] = "丰饶"
+            config.secondary_fate[2] = "毁灭"
+        elif config.fate == "丰饶":
+            config.secondary_fate[0] = "巡猎"
+            config.secondary_fate[1] = "存护"
+            config.secondary_fate[2] = "毁灭"
+        elif config.fate == "巡猎":
+            config.secondary_fate[0] = "存护"
+            config.secondary_fate[1] = "毁灭"
+            config.secondary_fate[2] = "欢愉"
+        elif config.fate == "毁灭":
+            pass
+        elif config.fate == "欢愉":
+            pass
+        elif config.fate == "繁育":
+            pass
+        elif config.fate == "智识":
+            pass
+
+        show_snack_bar(page, f"\"{config.fate}\"默認副命途：{config.secondary_fate[0]}、{config.secondary_fate[1]}、{config.secondary_fate[2]}", ft.colors.PRIMARY)
 
     def secfate1_changed(e):
         config.secondary_fate[0] = e.data
